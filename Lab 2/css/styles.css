@@ -1,0 +1,33 @@
+body{
+   background-color: #F2f2f2;
+   width: 90%;
+   margin: 0 auto; 
+}
+
+h1{
+    width: 35%;
+    margin: 0 auto;
+    height: 140px;
+    background-color: #b3d4fc;
+}
+
+#desc{
+    background-color: #95dbb4;
+    width: 80%;
+    padding: 5px 30px 5px 30px;
+    margin: 2px 10px 5px;
+
+}
+
+@media (max-width: 799px) {
+  body{
+      width: 100%;
+      background-color: #fcc0c0;
+  }
+  table{
+      display: none;
+  }
+  h1{
+      width: 80%;
+  }
+}
