@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Log In</title>
+    <title>Sign Up</title>
 
     <!-- Bootstrap core CSS -->
     <!-- Bootstrap core CSS -->
@@ -32,9 +33,9 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <input class="btn btn-lg btn-primary btn-block" type="button" id="formBtn" value="Sign Up">
-        <a class="btn btn-lg btn-primary btn-block" href="login.php">Login</a>
+        <a class="btn btn-lg btn-primary btn-block" href="index.php">Login</a>
     </form>
-
+    <div id="resp"></div>
 </div> <!-- /container -->
 
 

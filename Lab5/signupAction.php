@@ -1,5 +1,6 @@
 <?php
-	echo(var_dump($_POST)); // var_dump special developer function to see the internals of anything in PHP
+	session_start();
+	// echo(var_dump($_POST)); // var_dump special developer function to see the internals of anything in PHP
 
 $res = createUser(
 				$_POST['username'],
@@ -23,6 +24,11 @@ function createUser($username, $email, $password){
 	// echo $insql; // so print SQL generated to determine if it works using phpmyadmin
 	$conn->query($insql);
 	$val = $conn->insert_id;
+	//creating assoc arrays
+	$_SESSION["userData"] = array(
+		"userid"=>$val, 
+		"username"=>$username
+		);
 	$conn->close();
 	return $val;
 }
