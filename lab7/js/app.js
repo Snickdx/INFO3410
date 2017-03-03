@@ -1,52 +1,42 @@
 $(document).ready(function(){
 
-    $("#formBtn").click(function(){
-        //TEST
-        //making an object literal
+    $("#signupBtn").click(function(){
+
         var data = {
-            username:"bob",
-            password:"bob",
-            email:"bob@gmail.com"
-        };//empty object
+            username: $("#username").val(),
+            password: $("#password").val(),
+            email: $("#email").val()
+        };
 
-        //or we can assign properties later
-        // data.username = "bob";
-        // data.password = "bob";
-        // data.email ="bob@gmail.com"
+        $.post('http://localhost:80/INFO3410/lab7/controllers/signupAction.php', data, function(response) {
 
-        $.post('http://localhost:80/INFO3410/lab5/signupAction.php', data, function(response) {
-            // Log the response to the console
-            console.log("Response: "+response);
-            var obj = JSON.parse(response);
-            console.log(obj.status == "success");
-            if(obj.status == "success"){
-                window.location.href = "http://localhost:80/INFO3410/lab5/profile.php";
+            response = JSON.parse(response);
+
+            if(response.status == "success"){
+                window.location.href = "http://localhost:80/INFO3410/lab7/todo.php";
             }else{
-                window.location.href = "http://localhost:80/INFO3410/lab5/signup.php";
+                alert("error");
             }
-        
+
         });
     });
 
-
+    //Function Runs when the button is clicked
     $("#loginBtn").click(function(){
-        //TEST
-        //making an object literal
 
+        //grabs data from the form elements
         var data = {
             username: $("#username").val(),
             password:  $("#password").val()
         };
 
-        $.post('http://localhost:80/INFO3410/lab5/signupAction.php', data, function(response) {
-            // Log the response to the console
-            console.log("Response: "+response);
-            var obj = JSON.parse(response);
-            console.log(obj.status == "success");
-            if(obj.status == "success"){
-                window.location.href = "http://localhost:80/INFO3410/lab5/profile.php";
+        $.post('http://localhost/INFO3410/lab7/controllers/loginAction.php', data, function(response) {
+            response = JSON.parse(response);
+            if(response.status == "success"){
+                window.location.href = "http://localhost:80/INFO3410/lab7/todo.php";
+                localStorage.setItem("todo-userid", response.userid);
             }else{
-                window.location.href = "http://localhost:80/INFO3410/lab5/signup.php";
+                alert("Invalid Login");
             }
 
         });

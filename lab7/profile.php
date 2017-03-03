@@ -1,4 +1,4 @@
-<?php session_start(); echo(var_dump($_SESSION["userData"]["username"]));?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +11,9 @@
     <title>Sticky Footer Navbar Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="bower_components/bootstrap-material-design/dist/bootstrap-material-design.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap-material-design/dist/bootstrap-material-design.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/sticky-footer-navbar.css" rel="stylesheet">
 </head>
@@ -40,12 +40,12 @@
 
 <!-- Begin page content -->
 <div class="container">
-    <?php if(isset($SESSION['userData'])){?>
-        <?php echo("<h1>Hi ". $_SESSION["userData"]["username"] ."</h1>") ?>
+    <?php if(isset($_SESSION['userData']['username'])){
+        echo("<h1>Hi ". $_SESSION["userData"]["username"] ."</h1> <br><br>") ?>
         <form class="form-signin col col-sm-8 offset-sm-4">
             <h2 class="form-signin-heading">Change Password</h2>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <?php echo('<input id="userid" type="hidden" value='.$SESSION['userid'].'>'); ?>
+            <?php echo('<input id="userid" type="hidden" value='.$_SESSION['userData']['userid'].'>'); ?>
             <button class="btn btn-lg btn-primary btn-block" id="changeBtn" type="submit">Change</button>
         </form>
     <?php }else { ?>
@@ -66,6 +66,6 @@
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

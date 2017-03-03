@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "bootstrap": "4",
-    "bootstrap-material-design": "^4.0.2"
+    "bootstrap-material-design": "^4.0.2",
+    "tether": "^1.4.0"
   }
 }

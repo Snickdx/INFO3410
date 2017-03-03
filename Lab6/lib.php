@@ -22,9 +22,10 @@ function createUser($username, $email, $password){
 }
 
 function loginUser($userData){
-    global $conn;
-    $sql = "SELECT * FROM `user` WHERE `username` = ".$userData["username"]." AND `password`= ".$userData["password"];
+    global $conn;//reference global variable
+    $sql = "SELECT * FROM `user` WHERE `username` = ".$userData["username"]." AND `password`= ".$sha1(userData["password"]);
     $res = $conn->query($sql);
+    return $res;
 }
 
 function signUpUser($userData){

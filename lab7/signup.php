@@ -12,9 +12,9 @@
 
     <!-- Bootstrap core CSS -->
     <!-- Bootstrap core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="bower_components/bootstrap-material-design/dist/bootstrap-material-design.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap-material-design/dist/bootstrap-material-design.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/signin.css" rel="stylesheet">
@@ -32,7 +32,7 @@
         <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <input class="btn btn-lg btn-primary btn-block" type="button" id="formBtn" value="Sign Up">
+        <input class="btn btn-lg btn-primary btn-block" type="button" id="signupBtn" value="Sign Up">
         <a class="btn btn-lg btn-primary btn-block" href="index.php">Login</a>
     </form>
     <div id="resp"></div>
@@ -43,8 +43,8 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
