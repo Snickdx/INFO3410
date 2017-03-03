@@ -4,7 +4,6 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/*
 .idea/tasks.xml
 
 # Sensitive or high-churn files:
@@ -49,3 +48,6 @@ Lab2/bower_components
 Lab3/bower_components
 Lab4/bower_components
 Lab5/bower_components
+.idea/
+lab6/bower_components/
+lab7/bower_components/
