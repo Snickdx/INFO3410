@@ -42,8 +42,19 @@
 
 <!-- Begin page content -->
 <div class="container">
-    <h2><?php echo $_SESSION['userData']['username']?>'s ToDos</h2>
+    <h2><?php echo $_SESSION["userData"]["username"]?>'s ToDos</h2>
     <div id="table"></div>
+    <br>
+    <form id="todoForm">
+        <input type="text" id="todoText" name="todoText">
+        <input 
+            name="userid"
+            type="hidden" 
+            id="userid" 
+            value="<?php echo $_SESSION["userData"]["userid"]?>"
+        >
+        <input type="button" value="Add" id="formBtn">
+    </form>
 </div>
 
 <footer class="footer">
@@ -61,7 +72,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="js/app.js"></script>
 <script src="js/loadTodos.js"></script>
+<script src="js/app.js"></script>
+
 </body>
 </html>

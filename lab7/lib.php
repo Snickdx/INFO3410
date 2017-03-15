@@ -30,6 +30,7 @@ function loginUser($username, $password){
         return json_encode(array("status"=>"failure"));
     }else{
         $user = $res->fetch_assoc();
+
         $_SESSION["userData"] = array(
             "userid"=> $user['uid'],
             "username"=> $user['username']
@@ -53,7 +54,7 @@ function signUpUser($username, $email, $password){
 
 function insertTodo($text, $userId){
     $todo = new Todo($text, $userId);
-    $todo->insert();
+    return $todo->insert();
 }
 
 //gets the data for todo

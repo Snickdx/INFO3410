@@ -26,7 +26,9 @@ class Todo
     function insert(){
         global $conn;
         //run query to insert the object into the database
-        $conn->query("INSERT INTO `todo` (`ID`, `text`, `time`, `userid`) VALUES (NULL, {$this->text}, {$this->time->format('Y-m-d H:i:s')}, {$this->userId});");
+        $conn->query("
+            INSERT INTO `todo` (`ID`, `text`, `time`, `userid`) 
+            VALUES (NULL, '{$this->text}', '{$this->time->format('Y-m-d H:i:s')}', {$this->userId});"); 
         return $conn->insert_id;
     }
 
