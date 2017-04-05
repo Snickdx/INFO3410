@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    const SERVER = "http://localhost:80/INFO3410/lab7/"
+    const SERVER = "http://localhost:80/INFO3410/lab7/";
 
     $("#signupBtn").click(function(){
         var data = {
@@ -7,10 +7,10 @@ $(document).ready(function(){
             password: $("#password").val(),
             email: $("#email").val()
         };
-        $.post(SERVER+"/controllers/signupAction.php", data, function(response) {
+        $.post(SERVER+"/routes/signupAction.php", data, function(response) {
             response = JSON.parse(response);
             if(response.status == "success"){
-                window.location.href = "http://localhost:80/INFO3410/lab7/todo.php";
+                window.location.href = SERVER+"todo.php";
             }else{
                 alert("error");
             }
@@ -24,7 +24,7 @@ $(document).ready(function(){
             username: $("#username").val(),
             password:  $("#password").val()
         };
-        $.post(SERVER+'controllers/loginAction.php', data, function(response) {
+        $.post(SERVER+'routes/loginAction.php', data, function(response) {
             console.log(response);
             response = JSON.parse(response);
             console.log(response);
@@ -36,7 +36,7 @@ $(document).ready(function(){
             }
 
         });
-    })
+    });
 
     $("#formBtn").click(function(){
 
@@ -45,7 +45,7 @@ $(document).ready(function(){
             todoText:  $("#todoText").val()
         };
 
-        $.post(SERVER+'controllers/todoAction.php', data, function(response) {
+        $.post(SERVER+'routes/todoAction.php', data, function(response) {
             console.log(response);
             loadToDos();
         });

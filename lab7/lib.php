@@ -57,6 +57,14 @@ function insertTodo($text, $userId){
     return $todo->insert();
 }
 
+function deleteTodo($todoId, $userId){
+    $todo = Todo::get($todoId, $userId);
+}
+
+function updateTodo($todo, $text){
+
+}
+
 //gets the data for todo
 function getUserTodos($userId){
     global $conn;
